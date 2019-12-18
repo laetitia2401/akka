@@ -196,6 +196,41 @@
      <height>32</height>
     </rect>
    </property>
+   <item>
+    <property name="text">
+     <string>Paris</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Toulouse</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Grenoble</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Nantes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Bordeaux</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Lyon</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Nice</string>
+    </property>
+   </item>
   </widget>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
@@ -317,6 +352,16 @@
      <height>41</height>
     </rect>
    </property>
+   <item>
+    <property name="text">
+     <string>Francais</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Anglais</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>
