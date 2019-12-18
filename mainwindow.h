@@ -13,10 +13,16 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+
+
     ~MainWindow();
 
 private slots:
     void on_actionPararemetres_triggered();
+
+    void on_BtnMeteo_clicked();
+
+    void on_btnS_clicked();
 
 private:
     Ui::MainWindow *ui;

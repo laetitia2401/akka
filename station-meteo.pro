@@ -5,6 +5,10 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += core
+QT       += network
+QT       += sql
+QT       += widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,10 +29,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    dialogparametres.cpp
+    dialogparametres.cpp \
+    meteo.cpp \
+    meteoapi.cpp \
+    meteodb.cpp \
+    releve.cpp \
+    relevedb.cpp
 
 HEADERS  += mainwindow.h \
-    dialogparametres.h
+    dialogparametres.h \
+    meteo.h \
+    meteoapi.h \
+    meteodb.h \
+    releve.h \
+    relevedb.h
 
 FORMS    += mainwindow.ui \
     dialogparametres.ui

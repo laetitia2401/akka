@@ -42,6 +42,7 @@ void MeteoAPI::setTemp(double value)
     temp = value;
 }
 
+// Conversion de Kelvin en Celcius
 double MeteoAPI::convKC(double kelvin){
 
     double celcius = kelvin -273.15;
@@ -49,4 +50,6 @@ double MeteoAPI::convKC(double kelvin){
     return celcius;
 
 }
+
+
 
