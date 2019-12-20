@@ -4,6 +4,10 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
+#include <QLineSeries>
+#include <qlineseries.h>
+#include <QLineSeries>
+
 //using namespace QtCharts;
 #define Y1  sin(x)
 
@@ -14,8 +18,8 @@
 #define YMAX        6.71
 #define YSCALE      1.0
 
-#define LARGEUR_SOUHAITEE   3000 // max = 1360
-#define HAUTEUR_SOUHAITEE   3000 // max = 671
+#define LARGEUR_SOUHAITEE   771
+#define HAUTEUR_SOUHAITEE   171
 #define LARGEUR_ECRAN   1366
 #define HAUTEUR_ECRAN   768
 #define OFFSET_HAUT     37
@@ -30,7 +34,13 @@ DialogParametres::DialogParametres(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DialogParametres)
 {
+
     ui->setupUi(this);
+
+    connect(ui->rbArial, SIGNAL(clicked()), this, SLOT(on_rbPolices_checked()));
+    connect(ui->rbComic, SIGNAL(clicked()), this, SLOT(on_rbPolices_checked()));
+    connect(ui->rbTimes, SIGNAL(clicked()), this, SLOT(on_rbPolices_checked()));
+
     // 1.Dimensionnement de l'image
     if (largeur > LARGEUR_ECRAN - OFFSET_GAUCHE - OFFSET_DROITE)
       largeur = LARGEUR_ECRAN - OFFSET_GAUCHE - OFFSET_DROITE;
@@ -116,4 +126,11 @@ bool validite(int i,int j)
 {
   if ((i<0) || (i>=largeur) || (j<0) || (j>=hauteur)) return 0;
   return 1;
+}
+
+void DialogParametres::on_rbPolices_checked()
+{
+    QObject * objSender = sender();
+    QRadioButton *rb = (QRadioButton*)(objSender);
+    //ui->mainwindow->setFont(QFont(rb->text()));
 }

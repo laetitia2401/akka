@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>585</width>
-    <height>542</height>
+    <width>809</width>
+    <height>746</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>490</y>
+     <x>450</x>
+     <y>690</y>
      <width>341</width>
      <height>32</height>
     </rect>
@@ -81,7 +81,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>160</y>
+     <y>170</y>
      <width>131</width>
      <height>31</height>
     </rect>
@@ -93,24 +93,11 @@
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="lblCouleur">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>220</y>
-     <width>101</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Couleur :</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="lblLangue">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>310</y>
+     <y>380</y>
      <width>121</width>
      <height>31</height>
     </rect>
@@ -123,7 +110,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>350</y>
+     <y>430</y>
      <width>421</width>
      <height>31</height>
     </rect>
@@ -136,9 +123,9 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>390</y>
-     <width>551</width>
-     <height>91</height>
+     <y>490</y>
+     <width>771</width>
+     <height>171</height>
     </rect>
    </property>
    <property name="text">
@@ -271,31 +258,11 @@
     </property>
    </widget>
   </widget>
-  <widget class="QComboBox" name="cBoxPolice">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>150</y>
-     <width>221</width>
-     <height>32</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBox">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>210</y>
-     <width>221</width>
-     <height>32</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>270</y>
+     <y>320</y>
      <width>101</width>
      <height>31</height>
     </rect>
@@ -304,11 +271,11 @@
     <string>Mode :</string>
    </property>
   </widget>
-  <widget class="QGroupBox" name="groupBox_2">
+  <widget class="QGroupBox" name="groupBoxMode">
    <property name="geometry">
     <rect>
-     <x>199</x>
-     <y>240</y>
+     <x>200</x>
+     <y>300</y>
      <width>221</width>
      <height>61</height>
     </rect>
@@ -316,26 +283,26 @@
    <property name="title">
     <string/>
    </property>
-   <widget class="QCheckBox" name="cBoxJour">
+   <widget class="QRadioButton" name="radioButtonJour">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>87</width>
-      <height>22</height>
+      <width>102</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
      <string>Jour</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="cBoxNuit">
+   <widget class="QRadioButton" name="radioButtonNuit">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>120</x>
       <y>20</y>
-      <width>87</width>
-      <height>22</height>
+      <width>102</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
@@ -343,25 +310,96 @@
     </property>
    </widget>
   </widget>
-  <widget class="QComboBox" name="cBoxLangue">
+  <widget class="QGroupBox" name="groupboxRadioLangue">
    <property name="geometry">
     <rect>
      <x>200</x>
-     <y>300</y>
+     <y>359</y>
      <width>221</width>
-     <height>41</height>
+     <height>61</height>
     </rect>
    </property>
-   <item>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QRadioButton" name="radioButFranc">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>102</width>
+      <height>20</height>
+     </rect>
+    </property>
     <property name="text">
      <string>Francais</string>
     </property>
-   </item>
-   <item>
+   </widget>
+   <widget class="QRadioButton" name="radioButAngl">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>20</y>
+      <width>102</width>
+      <height>20</height>
+     </rect>
+    </property>
     <property name="text">
      <string>Anglais</string>
     </property>
-   </item>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBoxPolices">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>190</y>
+     <width>411</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QRadioButton" name="rbArial">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>102</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Arial</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbComic">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>50</y>
+      <width>102</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Courrier</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbTimes">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>50</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Times New Roman</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
