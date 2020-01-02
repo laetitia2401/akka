@@ -25,35 +25,35 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // *** DATABASE ***************************************************************/
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+//    // *** DATABASE ***************************************************************/
+//    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
-        //db.setDatabaseName(QDir::homePath() + "/meteo.db");
-        db.setDatabaseName("/home/tia/Documents/station-meteo/meteo.db");
+//        //db.setDatabaseName(QDir::homePath() + "/meteo.db");
+//        db.setDatabaseName("/home/tia/Documents/station-meteo/meteo.db");
 
-        bool ok = db.open();
+//        bool ok = db.open();
 
-        if(!ok){ qDebug() << "Err Cnx ! "; }else{
+//        if(!ok){ qDebug() << "Err Cnx ! "; }else{
 
-            qDebug() << " Cnx Ok ! ";
-            QString a,b;
+//            qDebug() << " Cnx Ok ! ";
+//            QString a,b;
 
-            // Simulation en attendant l'autre table meteo
-            QString rel_dateHeure = "441";
-            QString rel_unite = "551";
+//            // Simulation en attendant l'autre table meteo
+//            QString rel_dateHeure = "441";
+//            QString rel_unite = "551";
 
-               /*Releve *p = new Releve(a,b);
-                Relevedb *val = new Relevedb();
-*/
-               // QVector<Releve*> vec = new QVector<Releve>;
-                //val->ajout(rel_dateHeure, rel_unite);
+//               /*Releve *p = new Releve(a,b);
+//                Relevedb *val = new Relevedb();
+//*/
+//               // QVector<Releve*> vec = new QVector<Releve>;
+//                //val->ajout(rel_dateHeure, rel_unite);
 
-                // Notes : Servira pour le QChart
-                //ui->LABELQCHART->setText(val->recup(*p));
+//                // Notes : Servira pour le QChart
+//                //ui->LABELQCHART->setText(val->recup(*p));
 
 
-        }
-    db.close();
+//        }
+//    db.close();
 
     // *** API ************************************************************ ** */
 

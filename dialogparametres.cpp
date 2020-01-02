@@ -66,35 +66,70 @@ void DialogParametres::on_rbPolices_checked()
 void DialogParametres::on_buttonBox_accepted()
 
 {
-
+    int  formHeure;
+    QString mode;
+    QString unitTemp;
+    QString police;
+    QString langue;
     //formatheure
+    if (ui->rb12->isChecked())
+    {
+        formHeure= 12;
+    }
 
-    QObject * objSenderHeure = sender();
-
-    QRadioButton *rbFormat=(QRadioButton*)(objSenderHeure);
-
-    //ville
-
-    QObject * objSenderVille = sender();
-    QComboBox *cb=(QComboBox*)(objSenderVille);
+    if (ui->rb24->isChecked())
+    {
+        formHeure = 24;
+    }
     //UniteTemperature
-    QObject * objSenderUniteTemp = sender();
-    QRadioButton *rbUnite=(QRadioButton*)(objSenderUniteTemp);
+    if (ui->rbFahrenheit->isChecked())
+    {
+        unitTemp = "Fahrenheit";
+    }
+
+    if (ui->rbCelsius->isChecked())
+    {
+        unitTemp = "Celsuis";
+    }
     //police
-    QObject * objSender = sender();
-    QRadioButton *rb = (QRadioButton*)(objSender);
-    //couleur
-    QObject * objSenderCouleur = sender();
-    QComboBox *cbCoul=(QComboBox*)(objSenderCouleur);
+    if (ui->rbArial->isChecked())
+    {
+        police = "Arial";
+    }
+
+    if (ui->rbComic->isChecked())
+    {
+        police = "Comic";
+    }
+    if (ui->rbTimes->isChecked())
+    {
+        police = "Times";
+    }
     //mode
-    QObject * objSenderMode = sender();
-    QRadioButton *rbMode=(QRadioButton*)(objSenderMode);
+    if (ui->radioButtonJour->isChecked())
+    {
+        mode = "jour";
+    }
+
+    if (ui->radioButtonNuit->isChecked())
+    {
+        mode = "nuit";
+    }
     //langue
-    QObject * objSenderLangue = sender();
-    QRadioButton *rbLangue = (QRadioButton*)(objSenderLangue);
+    if (ui->radioButAngl->isChecked())
+    {
+        langue = "Anglais";
+    }
+
+    if (ui->radioButFranc->isChecked())
+    {
+        langue = "Francais";
+    }
+
+    //requete de sauvegarde des parametres*************************************************************
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
-        db.setDatabaseName("/home/tia/Documents/station-meteo/meteo.db");
+        db.setDatabaseName("/home/tia/Documents/propre/station-meteo/meteo.db");
 
         bool ok = db.open();
 
@@ -108,19 +143,19 @@ void DialogParametres::on_buttonBox_accepted()
 
                                 "VALUES (:formatHeure, :ville, :UniteTemperature , :police, :couleur, :mode , :langue)");
 
-                query.bindValue(":formatHeure",rbFormat->text());
+                query.bindValue(":formatHeure",formHeure);
 
-                query.bindValue(":ville",cb->currentText());
+                query.bindValue(":ville",ui->cBoxVille->currentText());
 
-                query.bindValue(":UniteTemperature",rbUnite->text());
+                query.bindValue(":UniteTemperature",unitTemp);
 
-                query.bindValue(":police",rb->text());
+                query.bindValue(":police",police);
 
-                query.bindValue(":couleur",cbCoul->currentText());
+                query.bindValue(":couleur","gris");
 
-                query.bindValue(":mode",rbMode->text());
+                query.bindValue(":mode",mode);
 
-                query.bindValue(":langue",rbLangue->text());
+                query.bindValue(":langue",langue);
 
                 query.exec();
 
