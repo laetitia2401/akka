@@ -135,7 +135,7 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QGroupBox" name="gBoxFomHeure">
+  <widget class="QGroupBox" name="groupBoxFomHeure">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -147,30 +147,30 @@
    <property name="title">
     <string/>
    </property>
-   <widget class="QCheckBox" name="cbox12H">
+   <widget class="QRadioButton" name="rb12">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>87</width>
-      <height>22</height>
+      <width>102</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>12 Heures</string>
+     <string>&amp;12h</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="cbox24H">
+   <widget class="QRadioButton" name="rb24">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>110</x>
       <y>20</y>
-      <width>87</width>
-      <height>22</height>
+      <width>102</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>24 Heures</string>
+     <string>&amp;24 h</string>
     </property>
    </widget>
   </widget>
@@ -231,26 +231,26 @@
    <property name="title">
     <string/>
    </property>
-   <widget class="QCheckBox" name="cBoxCelsius">
+   <widget class="QRadioButton" name="rbCelsius">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>87</width>
-      <height>22</height>
+      <width>102</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
      <string>Celsius</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="cBox_Fahrenheit">
+   <widget class="QRadioButton" name="rbFahrenheit">
     <property name="geometry">
      <rect>
       <x>110</x>
       <y>20</y>
-      <width>101</width>
-      <height>22</height>
+      <width>102</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
@@ -258,7 +258,7 @@
     </property>
    </widget>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="lblMode">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -306,7 +306,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Nuit</string>
+     <string>Nui&amp;t</string>
     </property>
    </widget>
   </widget>
@@ -332,7 +332,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Francais</string>
+     <string>F&amp;rancais</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="radioButAngl">
@@ -390,14 +390,14 @@
    <widget class="QRadioButton" name="rbTimes">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>260</x>
       <y>50</y>
-      <width>131</width>
+      <width>141</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>Times New Roman</string>
+     <string>&amp;Times New Roman</string>
     </property>
    </widget>
   </widget>

@@ -4,18 +4,20 @@
 #include "releve.h"
 #include "relevedb.h"
 #include "meteoapi.h"
-#include <QNetworkRequest>
 #include <QUrl>
 #include <QDebug>
-#include <QNetworkReply>
 #include <iostream>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
-#include <QSqlDatabase>
+
 #include <QDir>
-#include <QSqlQueryModel>
-#include <QSqlQuery>
+
+
+#include <QSqlDatabase>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -23,12 +25,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // *** DATABASE ************************************************************ ** */
-
+    // *** DATABASE ***************************************************************/
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
         //db.setDatabaseName(QDir::homePath() + "/meteo.db");
-        db.setDatabaseName("/root/Documents/ProjetsQt/stationmeteo/station-meteo/meteo.db");
+        db.setDatabaseName("/home/tia/Documents/station-meteo/meteo.db");
 
         bool ok = db.open();
 
@@ -41,11 +42,11 @@ MainWindow::MainWindow(QWidget *parent) :
             QString rel_dateHeure = "441";
             QString rel_unite = "551";
 
-                Releve *p = new Releve(a,b);
+               /*Releve *p = new Releve(a,b);
                 Relevedb *val = new Relevedb();
-
+*/
                // QVector<Releve*> vec = new QVector<Releve>;
-                val->ajout(rel_dateHeure, rel_unite);
+                //val->ajout(rel_dateHeure, rel_unite);
 
                 // Notes : Servira pour le QChart
                 //ui->LABELQCHART->setText(val->recup(*p));

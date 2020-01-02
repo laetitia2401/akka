@@ -1,136 +1,133 @@
 #include "dialogparametres.h"
 #include "ui_dialogparametres.h"
+#include "ui_mainwindow.h"
 #include <QImage>
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
-#include <QLineSeries>
-#include <qlineseries.h>
-#include <QLineSeries>
-
-//using namespace QtCharts;
-#define Y1  sin(x)
-
-#define XMIN      -13.60
-#define XMAX       13.60
-#define XSCALE      1.0
-#define YMIN       -6.71
-#define YMAX        6.71
-#define YSCALE      1.0
-
-#define LARGEUR_SOUHAITEE   771
-#define HAUTEUR_SOUHAITEE   171
-#define LARGEUR_ECRAN   1366
-#define HAUTEUR_ECRAN   768
-#define OFFSET_HAUT     37
-#define OFFSET_BAS      60
-#define OFFSET_GAUCHE   6
-#define OFFSET_DROITE   0
-#define EPAISSEUR_SCALE 10
-int largeur = LARGEUR_SOUHAITEE;
-int hauteur = HAUTEUR_SOUHAITEE;
+#include <QSqlQuery>
+#include <QDebug>
+#include <QRadioButton>
+#include <QComboBox>
 
 DialogParametres::DialogParametres(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DialogParametres)
+
 {
 
     ui->setupUi(this);
 
     connect(ui->rbArial, SIGNAL(clicked()), this, SLOT(on_rbPolices_checked()));
+
     connect(ui->rbComic, SIGNAL(clicked()), this, SLOT(on_rbPolices_checked()));
+
     connect(ui->rbTimes, SIGNAL(clicked()), this, SLOT(on_rbPolices_checked()));
 
-    // 1.Dimensionnement de l'image
-    if (largeur > LARGEUR_ECRAN - OFFSET_GAUCHE - OFFSET_DROITE)
-      largeur = LARGEUR_ECRAN - OFFSET_GAUCHE - OFFSET_DROITE;
-    if (hauteur > HAUTEUR_ECRAN - OFFSET_HAUT - OFFSET_BAS)
-      hauteur = HAUTEUR_ECRAN - OFFSET_HAUT - OFFSET_BAS;
-    image = QImage(QSize(largeur,hauteur), QImage::Format_RGB32);
-
-    // 2.Creation des variables
-    int                i,j,k;
-    long double        x,y;
-    unsigned long int* image_matrice = (unsigned long int*)calloc(largeur*hauteur,sizeof(unsigned long int));
-
-    // 3.Creation d'une image blanche
-    for (i = 0 ; i < largeur ; ++i)
-      for (j = 0 ; j < hauteur ; ++j)
-        image_matrice[i*hauteur+j] = 0x00ffffff;
-
-    // 4.Trace des axes
-    // Trace de l'axe x
-    for (i = xtoi(XMIN) ; i <= xtoi(XMAX) ; ++i)
-      {j = ytoj(0); if (validite(i,j)) image_matrice[i*hauteur+j] = 0x00ff0000;}
-    // Trace de l'axe y
-    for (j = ytoj(YMIN) ; j <= ytoj(YMAX) ; ++j)
-      {i = xtoi(0); if (validite(i,j)) image_matrice[i*hauteur+j] = 0x00ff0000;}
-
-    // 5.Trace des echelles
-    // Trace de l'echelle x
-    for (x = ceil(XMIN) ; x <= floor(XMAX) ; ++x)
-      for (k = 0 ; k < EPAISSEUR_SCALE ; ++k)
-        {i = xtoi(x); j = ytoj(0) - k; if (validite(i,j)) image_matrice[i*hauteur+j] = 0x00ff0000;}
-    // Trace de l'echelle y
-    for (y = ceil(YMIN) ; y <= floor(YMAX) ; ++y)
-      for (k = 0 ; k < EPAISSEUR_SCALE ; ++k)
-        {j = ytoj(y); i = xtoi(0) - k; if (validite(i,j)) image_matrice[i*hauteur+j] = 0x00ff0000;}
-
-    // 6.Trace de la courbe y = f(x)
-    for (i = xtoi(XMIN) ; i <= xtoi(XMAX) ; ++i)
-      {x = itox(i); j = ytoj(Y1); if (validite(i,j)) image_matrice[i*hauteur+j] = 0x00000000;}
-
-    // 7.Construction de l'image
-    // Attention a la convention : chez moi, l'origine est en bas a gauche.
-    for (i = 0 ; i < largeur ; ++i)
-      for (j = 0 ; j < hauteur ; ++j)
-        image.setPixel(QPoint(i,hauteur-1-j),image_matrice[i*hauteur+j]);
-
-    // 8.Liberation de la memoire
-    free(image_matrice);
-
-    ui->affichageGraphique->setPixmap(QPixmap::fromImage(image));
-    ui->affichageGraphique->resize(largeur,hauteur);
-    ui->affichageGraphique->setScaledContents(true);
-    ui->affichageGraphique->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
-
-
 }
-
 DialogParametres::~DialogParametres()
+
 {
     delete ui;
 }
 
-int xtoi(long double x)
-{
-  return (x-XMIN)/(XMAX-XMIN)*largeur;
-}
-
-int ytoj(long double y)
-{
-  return (y-YMIN)/(YMAX-YMIN)*hauteur;
-}
-
-long double itox(int i)
-{
-  return ((long double)i/largeur)*(XMAX-XMIN)+XMIN;
-}
-
-long double jtoy(int j)
-{
-  return ((long double)j/hauteur)*(YMAX-YMIN)+YMIN;
-}
-
-bool validite(int i,int j)
-{
-  if ((i<0) || (i>=largeur) || (j<0) || (j>=hauteur)) return 0;
-  return 1;
-}
-
 void DialogParametres::on_rbPolices_checked()
+
 {
+
     QObject * objSender = sender();
     QRadioButton *rb = (QRadioButton*)(objSender);
-    //ui->mainwindow->setFont(QFont(rb->text()));
+    //mise a jour de la qdialog pour la police
+    //format d'heure
+    ui->lblFormatHeure->setFont(QFont(rb->text()));
+    ui->groupBoxFomHeure->setFont(QFont(rb->text()));
+    //ville
+    ui->lblVille->setFont(QFont(rb->text()));
+    ui->cBoxVille->setFont(QFont(rb->text()));
+    //unite temperature
+    ui->lblUniteTemp->setFont(QFont(rb->text()));
+    ui->groupBoxFomHeure->setFont(QFont(rb->text()));
+    //Police
+    ui->lblPolice->setFont(QFont(rb->text()));
+    ui->rbArial->setFont(QFont(rb->text()));
+    ui->rbComic->setFont(QFont(rb->text()));
+    ui->rbTimes->setFont(QFont(rb->text()));
+    //mode
+    ui->lblMode->setFont(QFont(rb->text()));
+    ui->groupBoxMode->setFont(QFont(rb->text()));
+    //langue
+    ui->lblLangue->setFont(QFont(rb->text()));
+    ui->groupboxRadioLangue->setFont(QFont(rb->text()));
+    //label evolution temperature
+    ui->lblEvo12Heures->setFont(QFont(rb->text()));
+
 }
+
+void DialogParametres::on_buttonBox_accepted()
+
+{
+
+    //formatheure
+
+    QObject * objSenderHeure = sender();
+
+    QRadioButton *rbFormat=(QRadioButton*)(objSenderHeure);
+
+    //ville
+
+    QObject * objSenderVille = sender();
+    QComboBox *cb=(QComboBox*)(objSenderVille);
+    //UniteTemperature
+    QObject * objSenderUniteTemp = sender();
+    QRadioButton *rbUnite=(QRadioButton*)(objSenderUniteTemp);
+    //police
+    QObject * objSender = sender();
+    QRadioButton *rb = (QRadioButton*)(objSender);
+    //couleur
+    QObject * objSenderCouleur = sender();
+    QComboBox *cbCoul=(QComboBox*)(objSenderCouleur);
+    //mode
+    QObject * objSenderMode = sender();
+    QRadioButton *rbMode=(QRadioButton*)(objSenderMode);
+    //langue
+    QObject * objSenderLangue = sender();
+    QRadioButton *rbLangue = (QRadioButton*)(objSenderLangue);
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+
+        db.setDatabaseName("/home/tia/Documents/station-meteo/meteo.db");
+
+        bool ok = db.open();
+
+        if(!ok){ qDebug() << "Err Cnx ! "; }else{
+
+            qDebug() << " Cnx Ok ! ";
+
+                QSqlQuery query;
+
+                query.prepare("INSERT INTO parametres (formatHeure, ville,UniteTemperature,police,couleur,mode,langue)"
+
+                                "VALUES (:formatHeure, :ville, :UniteTemperature , :police, :couleur, :mode , :langue)");
+
+                query.bindValue(":formatHeure",rbFormat->text());
+
+                query.bindValue(":ville",cb->currentText());
+
+                query.bindValue(":UniteTemperature",rbUnite->text());
+
+                query.bindValue(":police",rb->text());
+
+                query.bindValue(":couleur",cbCoul->currentText());
+
+                query.bindValue(":mode",rbMode->text());
+
+                query.bindValue(":langue",rbLangue->text());
+
+                query.exec();
+
+        }
+
+    db.close();
+
+}
+
+
