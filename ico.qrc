@@ -1,18 +1,2 @@
-<RCC>
-    <qresource prefix="/ico">
-        <file>images/weather-few-clouds.png</file>
-        <file>images/weather-fog.png</file>
-        <file>images/weather-haze.png</file>
-        <file>images/weather-icy.png</file>
-        <file>images/weather-overcast.png</file>
-        <file>images/weather-showers.png</file>
-        <file>images/weather-sleet.png</file>
-        <file>images/weather-snow.png</file>
-        <file>images/weather-storm.png</file>
-        <file>images/weather-sunny.png</file>
-        <file>images/weather-sunny-very-few-clouds.png</file>
-        <file>images/weather-thundershower.png</file>
-        <file>images/fond_nuage.jpg</file>
-        <file>images/fond_nuit.jpg</file>
-    </qresource>
-</RCC>
+<!DOCTYPE RCC>
+<RCC version="1.0"/>
