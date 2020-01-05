@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>809</width>
-    <height>464</height>
+    <height>746</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>390</y>
+     <x>450</x>
+     <y>690</y>
      <width>341</width>
      <height>32</height>
     </rect>
@@ -106,6 +106,35 @@
     <string>Langue :</string>
    </property>
   </widget>
+  <widget class="QLabel" name="lblEvo12Heures">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>430</y>
+     <width>421</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Evolution de la température intérieur des 12 dernieres heures:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="affichageGraphique">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>490</y>
+     <width>771</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>affichage graphique</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
   <widget class="QGroupBox" name="groupBoxFomHeure">
    <property name="geometry">
     <rect>
@@ -128,7 +157,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>&amp;12h</string>
+     <string>12h</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="rb24">
@@ -141,7 +170,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>&amp;24 h</string>
+     <string>24 h</string>
     </property>
    </widget>
   </widget>
@@ -277,7 +306,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Nui&amp;t</string>
+     <string>Nuit</string>
     </property>
    </widget>
   </widget>
@@ -303,7 +332,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>F&amp;rancais</string>
+     <string>Francais</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="radioButAngl">
@@ -361,14 +390,14 @@
    <widget class="QRadioButton" name="rbTimes">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>270</x>
       <y>50</y>
-      <width>141</width>
+      <width>131</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>&amp;Times New Roman</string>
+     <string>Times New Roman</string>
     </property>
    </widget>
   </widget>

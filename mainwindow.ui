@@ -14,160 +14,17 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="dateHeure">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>91</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>date et heure</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="tempInt">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>temperature</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="tauxHumidInt">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>100</y>
-      <width>151</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>taux humidite interieur</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="pressionInt">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>140</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>pression interieur</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="tempExt">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>190</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>temperature exterieur</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="images">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>240</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>images</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="ville">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>290</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>ville : </string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="tempIntExt">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>340</y>
-      <width>241</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>indication temperatue interieur et ext</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="difTempExtInt">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>410</y>
-      <width>311</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>difference entre la temperature exterieur et interieur :</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="resTempIntIdeal">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>470</y>
-      <width>301</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>resolution de la temperature interieure ideale :</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="pres5jrsSuivant">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>540</y>
+      <x>20</x>
+      <y>510</y>
       <width>271</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>previsionnel pour les 5 jours suivants :</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="calPointRos">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>610</y>
-      <width>331</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Calcul du point de rosée et de la temperature humidex:</string>
+     <string>Previsionnel pour les 5 jours suivants :</string>
     </property>
    </widget>
    <widget class="QLabel" name="affichageDateHeure">
@@ -176,9 +33,9 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>10</x>
       <y>10</y>
-      <width>441</width>
+      <width>291</width>
       <height>31</height>
      </rect>
     </property>
@@ -186,7 +43,7 @@
      <string notr="true">border</string>
     </property>
     <property name="text">
-     <string>affichage</string>
+     <string>DATE/HEURE</string>
     </property>
     <property name="scaledContents">
      <bool>false</bool>
@@ -198,81 +55,17 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="affichageTemp">
+   <widget class="QLabel" name="affImage">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>60</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>affichage</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="affTauxHumInt">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>97</y>
-      <width>171</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>affichage</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="affPressionInt">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
+      <x>110</x>
       <y>140</y>
-      <width>101</width>
-      <height>31</height>
+      <width>241</width>
+      <height>251</height>
      </rect>
     </property>
     <property name="text">
-     <string>affichage</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="affTempExt">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>190</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>affichage</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="affImages">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>250</y>
-      <width>111</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>affichage</string>
+     <string>IMAGE</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -281,99 +74,433 @@
    <widget class="QLabel" name="affVille">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>290</y>
-      <width>91</width>
-      <height>31</height>
+      <x>210</x>
+      <y>40</y>
+      <width>181</width>
+      <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>DejaVu Serif</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="text">
-     <string>affichage</string>
+     <string>VILLE</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="affTempIntExt">
+   <widget class="QLabel" name="fond_image">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>340</y>
-      <width>111</width>
-      <height>31</height>
+      <x>6</x>
+      <y>13</y>
+      <width>707</width>
+      <height>874</height>
      </rect>
     </property>
-    <property name="text">
-     <string>affichage</string>
+    <property name="minimumSize">
+     <size>
+      <width>707</width>
+      <height>874</height>
+     </size>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
+    <property name="text">
+     <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="affDiffTempIntExt">
+   <widget class="QWidget" name="aaa" native="true">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>407</y>
+      <x>40</x>
+      <y>550</y>
+      <width>651</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="affJour1">
+         <property name="text">
+          <string>Mardi</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="affPrecisionnel1">
+         <property name="text">
+          <string>imgJour1</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="font">
+            <font>
+             <family>DejaVu Sans</family>
+             <pointsize>15</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>8°</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>4°</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="affJour2">
+         <property name="text">
+          <string>Mercredi</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="affPrecisionnel2">
+         <property name="text">
+          <string>affichage</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="font">
+            <font>
+             <family>DejaVu Sans</family>
+             <pointsize>15</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>10°</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>6°</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="affJour3">
+         <property name="text">
+          <string>Jeudi</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="affPrecisionnel3">
+         <property name="text">
+          <string>affichage</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="font">
+            <font>
+             <family>DejaVu Sans</family>
+             <pointsize>15</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>11°</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>5°</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QLabel" name="affJour4">
+         <property name="text">
+          <string>Vendredi</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="affPrecisionnel4">
+         <property name="text">
+          <string>affichage</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="font">
+            <font>
+             <family>DejaVu Sans</family>
+             <pointsize>15</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>14°</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>6°</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QLabel" name="affJour5">
+         <property name="text">
+          <string>Samedi</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="affPrecisionnel5">
+         <property name="text">
+          <string>affichage</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLabel" name="label_9">
+           <property name="font">
+            <font>
+             <family>DejaVu Sans</family>
+             <pointsize>15</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>14°</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>10°</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>50</y>
+      <width>256</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_6">
+     <item>
+      <widget class="QLabel" name="affichageTemp">
+       <property name="font">
+        <font>
+         <pointsize>30</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Temperature</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="affTempMin">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>470</y>
+      <width>164</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_8">
+     <item>
+      <widget class="QLabel" name="Mode">
+       <property name="text">
+        <string>Mode :</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
+       <item>
+        <widget class="QRadioButton" name="radioButtonJourA">
+         <property name="text">
+          <string>Jour</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButtonNuitA">
+         <property name="text">
+          <string>Nuit</string>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>470</y>
       <width>141</width>
       <height>31</height>
      </rect>
     </property>
-    <property name="text">
-     <string>affichage</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_9">
+     <item>
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Ville :</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>Paris</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Bordeaux</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Nice</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Lille</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Grenoble</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
    </widget>
-   <widget class="QLabel" name="affResTempIdeale">
+   <widget class="QLabel" name="label_12">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>460</x>
       <y>470</y>
-      <width>101</width>
-      <height>31</height>
+      <width>231</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="text">
-     <string>affichage</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <string>Laetitia-Parfait-Toufik (AJC/AKKA)</string>
     </property>
    </widget>
-   <widget class="QLabel" name="affPrecisionnel">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>540</y>
-      <width>91</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>affichage</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="affCalRoseTempHum">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>610</y>
-      <width>121</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>affichage</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
+   <zorder>fond_image</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>pres5jrsSuivant</zorder>
+   <zorder>aaa</zorder>
+   <zorder>affVille</zorder>
+   <zorder>affichageDateHeure</zorder>
+   <zorder>affImage</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>label_12</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -381,7 +508,7 @@
      <x>0</x>
      <y>0</y>
      <width>707</width>
-     <height>19</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuParametrer">

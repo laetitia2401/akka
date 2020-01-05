@@ -16,19 +16,6 @@
 
 MeteoAPI::MeteoAPI()
 {
-    // QNetworkRequest request(QUrl("http://api.openweathermap.org/data/2.5/find?q=London&appid=479d7b90515d806879c5cccbe21077ee"));
-     QNetworkRequest request(QUrl("http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=479d7b90515d806879c5cccbe21077ee"));
-        request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-
-        QNetworkAccessManager mgr;
-        QNetworkReply * reply = mgr.get(request);
-
-        while(!reply->isFinished())
-        {
-          //  qApp->processEvents();
-        }
-
-        QByteArray reponse = reply->readAll();
 }
 
 double MeteoAPI::getTemp() const
@@ -50,6 +37,79 @@ double MeteoAPI::convKC(double kelvin){
     return celcius;
 
 }
+
+QString MeteoAPI::recupIco(QString ico){
+
+    QString img;
+
+    if(ico == "01d") img = ":/ico/images/weather-few-clouds.png";
+    if(ico == "02d") img = ":/ico/images/weather-overcast.png";
+    if(ico == "03d") img = ":/ico/images/weather-few-clouds.png";
+    if(ico == "04n") img = ":/ico/images/weather-few-clouds.png";
+    if(ico == "04d") img = ":/ico/images/weather-few-clouds.png";
+    if(ico == "09d") img = ":/ico/images/weather-few-clouds.png";
+    if(ico == "10d") img = ":/ico/images/weather-few-clouds.png";
+    if(ico == "11d") img = ":/ico/images/weather-storm.png";
+    if(ico == "13d") img = ":/ico/images/weather-snow.png";
+
+
+   /* switch(ico){
+
+        case "01d":
+            ":ico/images/fraise.jpg";
+        break;
+        case "02d":
+        ":ico/images/fraise.jpg";
+    break;
+    default:
+        ":ico/images/fraise.jpg";
+
+    }*/
+
+    return img;
+}
+
+QString MeteoAPI::recupIco2(QString ico){
+
+    QString img;
+
+    if(ico == "01d") img = ":/ico/images/weather-few-clouds.png";
+    if(ico == "02d") img = ":/ico/images/weather-overcast.png";
+    if(ico == "03d") img = ":/ico/images/weather-few-clouds.png";
+    if(ico == "04n") img = ":/ico/images/weather-few-clouds.png";
+    if(ico == "04d") img = ":/ico/images/weather-few-clouds.png";
+    if(ico == "09d") img = ":/ico/images/weather-few-clouds.png";
+    if(ico == "10d") img = ":/ico/images/weather-few-clouds.png";
+    if(ico == "11d") img = ":/ico/images/weather-storm.png";
+    if(ico == "13d") img = ":/ico/images/weather-snow.png";
+
+
+   /* switch(ico){
+
+        case "01d":
+            ":ico/images/fraise.jpg";
+        break;
+        case "02d":
+        ":ico/images/fraise.jpg";
+    break;
+    default:
+        ":ico/images/fraise.jpg";
+
+    }*/
+
+    return img;
+}
+
+QString MeteoAPI::recupJour(QString met)
+{
+
+
+
+}
+
+
+
+
 
 
 

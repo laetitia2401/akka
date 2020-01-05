@@ -1,6 +1,9 @@
 #ifndef METEOAPI_H
 #define METEOAPI_H
 
+#include <QString>
+
+
 
 class MeteoAPI
 {
@@ -14,6 +17,10 @@ public:
     void setTemp(double value);
     double convKC(double); //Conversion Kelvin -> Celcius
     double convKF(double); // Conversion Celcius -> Farhenheit
+
+    QString recupIco(QString ico);
+    QString recupIco2(QString ico);
+    QString recupJour(QString jour);
 
 };
 
