@@ -7,7 +7,7 @@
 QT       += core gui
 QT       += network
 QT       += sql
-
+QT       += charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -28,10 +28,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    dialogparametres.cpp
+    dialogparametres.cpp \
+    meteo.cpp \
+    releve.cpp \
+    relevedb.cpp
 
 HEADERS  += mainwindow.h \
-    dialogparametres.h
+    dialogparametres.h \
+    meteo.h \
+    releve.h \
+    relevedb.h
 
 FORMS    += mainwindow.ui \
     dialogparametres.ui

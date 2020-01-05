@@ -55,7 +55,7 @@ MainWindow::MainWindow(QWidget *parent) :
 //        }
 //    db.close();
 
-    // *** API ************************************************************ ** */
+    // *** API ***************************************************************/
 
     // CHoix de la ville
     QString ville = "London";
@@ -74,7 +74,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
         QByteArray reponse = reply->readAll();
 
-    // *** JSON ****************************************************** ** */
+    // *** JSON *********************************************************/
 
         QJsonDocument jsonReponse = QJsonDocument::fromJson(reponse);
         reply->deleteLater();

@@ -9,6 +9,12 @@
 #include <QDebug>
 #include <QRadioButton>
 #include <QComboBox>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QChartView>
+#include <QtCharts/QSplineSeries>
+
+QT_CHARTS_USE_NAMESPACE
 
 DialogParametres::DialogParametres(QWidget *parent) :
     QDialog(parent),
@@ -64,7 +70,6 @@ void DialogParametres::on_rbPolices_checked()
 }
 
 void DialogParametres::on_buttonBox_accepted()
-
 {
     int  formHeure;
     QString mode;
@@ -76,7 +81,6 @@ void DialogParametres::on_buttonBox_accepted()
     {
         formHeure= 12;
     }
-
     if (ui->rb24->isChecked())
     {
         formHeure = 24;
@@ -86,7 +90,6 @@ void DialogParametres::on_buttonBox_accepted()
     {
         unitTemp = "Fahrenheit";
     }
-
     if (ui->rbCelsius->isChecked())
     {
         unitTemp = "Celsuis";
@@ -96,7 +99,6 @@ void DialogParametres::on_buttonBox_accepted()
     {
         police = "Arial";
     }
-
     if (ui->rbComic->isChecked())
     {
         police = "Comic";
@@ -110,7 +112,6 @@ void DialogParametres::on_buttonBox_accepted()
     {
         mode = "jour";
     }
-
     if (ui->radioButtonNuit->isChecked())
     {
         mode = "nuit";
@@ -120,12 +121,10 @@ void DialogParametres::on_buttonBox_accepted()
     {
         langue = "Anglais";
     }
-
     if (ui->radioButFranc->isChecked())
     {
         langue = "Francais";
     }
-
     //requete de sauvegarde des parametres*************************************************************
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
