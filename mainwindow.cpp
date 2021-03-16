@@ -114,7 +114,7 @@ void MainWindow::on_comboBox_activated(const QString &arg1)
     QString unit = "metric";
 
     QNetworkRequest request(QUrl("http://api.openweathermap.org/data/2.5/weather?q="
-                                 + ville + "," + pays + "&units="+ unit +"&APPID=479d7b90515d806879c5cccbe21077ee"));
+                                 + ville + "," + pays + "&units="+ unit +"&APPID=********************"));
 
        request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
